@@ -47,21 +47,21 @@ class Node {
 */
 
     void levelOrder(Node * root) {
-        queue<Node> nodes;
-        nodes.push(*root);
+        queue<Node*> nodes;
+        nodes.push(root);
         while(!nodes.empty())
         {
             auto t = nodes.front();
             nodes.pop();
-            if(t.left)
+            if(t->left)
             {
-                nodes.push(*t.left);
+                nodes.push(t->left);
             }
-            if(t.right)
+            if(t->right)
             {
-                nodes.push(*t.right);
+                nodes.push(t->right);
             }
-            std::cout<<t.data<<" ";
+            std::cout<<t->data<<" ";
         }
 
     }
